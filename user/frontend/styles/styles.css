@@ -1,1 +1,439 @@
-/* All general styles will be here  for admin front end*/
+.buses-tickect-mobile,
+.buses-tickect-mobile * {
+  box-sizing: border-box;
+  margin-left: 10px ;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.buses-tickect-mobile {
+  background: transparent;
+  padding: 10px;
+  margin-left: 35%;
+  height: 983px;
+  position: relative;
+  overflow: hidden;
+}
+.footer {
+  position: absolute;
+  inset: 0;
+  margin-bottom: 10px;
+}
+.rectangle-5 {
+  background: #f5e9d3;
+  border-radius: 8px 8px 8px 8px;
+  border-style: solid;
+  border-color: #fdb32c;
+  border-width: 1px;
+  width: 430px;
+  height: 45px;
+  position: absolute;
+  left: 0px;
+  top: 930px;
+}
+.copyright {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-SemiBold", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  position: absolute;
+  left: 149px;
+  top: 951px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.copyright-svgrepo-com {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  left: 124px;
+  top: 947px;
+  overflow: visible;
+}
+.rectangle-13 {
+  background: #ffffff;
+  width: 430px;
+  height: 839px;
+  position: absolute;
+  left: 0px;
+  top: 99px;
+}
+.rectangle-16 {
+  background: #ffffff;
+  width: 430px;
+  height: 839px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.shapes {
+  position: absolute;
+  inset: 0;
+}
+.group-3 {
+  width: 513px;
+  height: 333px;
+  position: static;
+}
+.ellipse-1 {
+  background: rgba(255, 165, 0, 0.15);
+  border-radius: 50%;
+  width: 268px;
+  height: 259px;
+  position: absolute;
+  left: 290px;
+  top: 238px;
+}
+.ellipse-2 {
+  background: rgba(255, 218, 160, 0.4);
+  border-radius: 50%;
+  width: 45px;
+  height: 38px;
+  position: absolute;
+  left: 45px;
+  top: 164px;
+}
+.polygon-1 {
+  width: 357px;
+  height: 448px;
+  position: absolute;
+  left: -48.16px;
+  top: 237.83px;
+  transform: translate(48.16px, 0px);
+  overflow: visible;
+}
+.group-19 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-33 {
+  background: #d9d9d9;
+  border-radius: 15px;
+  width: 399px;
+  height: 813px;
+  position: absolute;
+  left: 15px;
+  top: 37px;
+}
+.details {
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 77.84px;
+  top: 256.24px;
+  width: 285.29px;
+  height: 257.36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.detail-1 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-2 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-3 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-4 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-5 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-6 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-7 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-8 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-9 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-10 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-11 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-12 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-13 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-14 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-15 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-16 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-17 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-18 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-19 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-20 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-21 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-22 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-23 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-24 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-25 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-26 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.detail-27 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail-28 {
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  left: 75.85px;
+  top: 198.16px;
+  width: 288.28px;
+  height: 85.12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.detail-29 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail-30 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail-31 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.detail-32 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail-33 {
+  color: #714b0e;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail-34 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail-35 {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.detail-36 {
+  color: #000000;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.qr-scanner {
+  border-radius: 15px;
+  width: 224.44px;
+  height: 182.26px;
+  position: absolute;
+  left: 102.78px;
+  top: 531.61px;
+  object-fit: cover;
+}
+.warning {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-SemiBold", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  left: calc(25% - 170px);
+  top: 735px;
+  width: 331px;
+  height: 60px;
+  display: block;
+  align-items: left;
+  justify-content: left;
+}
+.power {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  left: 107.77px;
+  top: 821.98px;
+  width: 188.53px;
+  height: 15.02px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vector-1 {
+  width: 344px;
+  height: 746px;
+  position: absolute;
+  left: 38px;
+  top: 68px;
+  overflow: visible;
+}
+.ritco-1 {
+  border-radius: 3px;
+  width: 150px;
+  height: 99px;
+  position: absolute;
+  left: 140px;
+  top: 84px;
+  object-fit: cover;
+}
+.submit-btn {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-4 {
+  background: #fdb32c;
+  border-radius: 7px;
+  width: 150px;
+  height: 59px;
+  position: absolute;
+  left: 15px;
+  top: 865px;
+  cursor: pointer;
+}
+.back {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-SemiBold", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  position: absolute;
+  left: 52px;
+  top: 880px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
