@@ -63,6 +63,20 @@ app.get('/bus-details', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/bus-details.html'));
 });
 
+app.get('/agencies/:id', (req,res) => {
+    const agencyid = req.params.id
+    const sql = 'SELECT * FROM agencies WHERE AgencyID =?';
+    conn.query(sql, [agencyid], (err, results) => {
+        if(err) {
+            console.error("Error executing query:",err)
+            res.status(500).json({error:"Internal Server Error"})
+            return;
+        }
+        const agency = results[0];
+        res.json(agency);
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`Server listening on port  http://localhost${PORT}`);
 })
