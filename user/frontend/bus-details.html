@@ -22,6 +22,7 @@
             return `
             <div class="card mb-3">
                 <div class="card-body">
+                    <h5 class="card-title">${bus.AgencyName}</h5>
                     <h5 class="card-title">${bus.Plate}</h5>
                     <p class="card-text">Available Seats : ${bus.AvailableSeats}</p>
                     <p class="card-text">Departure Time: ${bus.DeptTime}</p>
@@ -35,12 +36,21 @@
             const from = urlParams.get('from')
             const to = urlParams.get('to')
             const data = JSON.parse(urlParams.get('data'));
+            const busesdata = data.data;
             const busListContainer = document.getElementById('bus-list');
 
-            if(data && data.length > 0) {
+            if(busesdata && busesdata.length > 0) {
                 busListContainer.innerHTML +=  `<h4>Showing results for From: ${from} To: ${to}</h4>`;
-                data.forEach(item => {
-                    busListContainer += renderBusDetails(bus)
+                busesdata.forEach(bus => {
+                    axios.get(`http://localhost:4000/agencies/${bus.AgencyID}`)
+                    .then(function(response){
+                        const agencyName = response.data.AgencyName;
+                        bus.AgencyName = agencyName
+                        busListContainer.innerHTML += renderBusDetails(bus)
+                    })
+                    .catch(function(error){
+                        console.error('Error:', error)
+                    })
                 })
             } else {
                 busListContainer.innerHTML = '<p>No buses availabe for selected route</p>'
