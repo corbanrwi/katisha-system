@@ -1,0 +1,244 @@
+body{
+  overflow-x: hidden;
+}
+.admin-auth-desktop,
+.admin-auth-desktop * {
+  box-sizing: border-box;
+}
+.admin-auth-desktop {
+  background: #f4f3f3;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
+}
+.shapes {
+  height: auto;
+  position: absolute;
+  left: -973px;
+  top: -296px;
+  overflow: visible;
+}
+.form {
+  position: absolute;
+  inset: 0;
+  
+}
+.welcome-to-katisha-admin {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  position: absolute;
+  left: 491px;
+  top: 204px;
+  width: 261px;
+  height: 22.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bus-front-svgrepo-com {
+  width: 166px;
+  height: 161.07px;
+  position: absolute;
+  left: 537px;
+  top: 12px;
+  overflow: visible;
+}
+
+.rectangle-10 {
+  border-radius: 0px;
+  width: 512.9px;
+  height: 554px;
+  position: absolute;
+  left: 362px;
+  top: 12px;
+  overflow: visible;
+}
+
+.rectangle-12 {
+  border-radius: 0px;
+  width: 150.01px;
+  height: 71.74px;
+  position: absolute;
+  left: 566px;
+  top: 628px;
+  overflow: visible;
+}
+
+.rectangle-122 {
+  border-radius: 0px;
+  width: 150.01px;
+  height: 71.74px;
+  position: absolute;
+  left: 729.99px;
+  top: 628px;
+  overflow: visible;
+}
+
+.footer {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-6 {
+  background: #f5e9d3;
+  border-radius: 8px 8px 0px 0px;
+  border-style: solid;
+  border-color: #fdb32c;
+  border-width: 1px;
+  width: 1440px;
+  height: 68px;
+  position: absolute;
+  left: 0px;
+  top: 836px;
+}
+
+.copyright-svgrepo-com {
+  width: 35px;
+  height: 27px;
+  position: absolute;
+  left: 361px;
+  top: 863px;
+  overflow: visible;
+}
+.copyright-2024-black {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-SemiBold", sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  position: absolute;
+  left: calc(50% - 159px);
+  top: 860px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.password-input {
+  width: 323px;
+  height: 67px;
+  position: absolute;
+  left: 505px;
+  top: 170px;
+}
+.group-5 {
+  position: absolute;
+  inset: 0;
+}
+
+.password {
+  color: #a19b9b;
+  text-align: center;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  right: 59.13%;
+  left: 6.5%;
+  width: 34.37%;
+  bottom: 38.81%;
+  top: 25.37%;
+  height: 35.82%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.-input {
+  width: 323px;
+  height: 67px;
+  position: absolute;
+  top: 137px;
+  left: calc(18% - 125.15px);
+}
+.name {
+  background: #ffffff;
+  border-radius: 11px;
+  border-style: solid;
+  border-color: #fdb32c;
+  border-width: 1px;
+  width: 100%;
+  height: 85.07%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 14.93%;
+  top: 0%;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 15px;
+  left: calc(43% - 125.15px);
+}
+.password-input2 {
+  width: 323px;
+  height: 67px;
+  position: absolute;
+  left: 57px;
+  top: 206px;
+  left: calc(18% - 125.15px);
+}
+.password2 {
+  color: #a19b9b;
+  text-align: center;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  right: 58.51%;
+  left: 5.88%;
+  width: 35.6%;
+  bottom: 38.81%;
+  top: 25.37%;
+  height: 35.82%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
+  width: 512.9px;
+  height: 604px;
+  position: relative;
+}
+
+.pj {
+  background: #fdb32c;
+  border-radius: 7px;
+  width: 150px;
+  height: 59px;
+  position: absolute;
+  left: calc(50% - 75px); 
+  top: 600px; 
+  cursor: pointer;
+}
+
+.submit {
+  background: #fdb32c;
+  border-radius: 7px;
+  width: 150px;
+  height: 59px;
+  position: absolute;
+  left: calc(50% - 75px); 
+  top: 670px; 
+  cursor: pointer;
+}
+.pj:hover{
+  background-color: rgb(255, 166, 0);
+}
+.submit:hover{
+  background-color: orange;
+}
+.pj, .submit {
+  background: #fdb32c;
+  border-radius: 7px;
+  width: 150px;
+  height: 59px;
+  position: absolute;
+  cursor: pointer;
+  top: 480px; /* Adjust the vertical position as needed */
+}
+.pj {
+  left: calc(123% - 175px); /* Adjusted to center horizontally */
+}
+
+.submit {
+  left: calc(117% + 25px); /* Adjusted to position next to the "BACK" button */
+}
