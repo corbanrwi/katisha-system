@@ -52,11 +52,11 @@
 }
 .det {
   background: #ffffff;
-  width: 819px;
+  width: 610px;
   height: 71px;
   position: absolute;
-  left: 280px;
-  top: 560px;
+  left: 370px;
+  top: 525px;
   border-radius: 10px;
 }
 .to {
@@ -66,8 +66,8 @@
   font-size: 9px;
   font-weight: 300;
   position: absolute;
-  left: 484.28px;
-  top: 584.21px;
+  left: 604.28px;
+  top: 540.21px;
   width: 11.01px;
   height: 9.5px;
 }
@@ -78,8 +78,8 @@
   font-size: 9px;
   font-weight: 300;
   position: absolute;
-  left: 292.03px;
-  top: 584.21px;
+  left: 390.03px;
+  top: 540.21px;
   width: 25.03px;
   height: 9.5px;
 }
@@ -87,16 +87,16 @@
   width: 15.02px;
   height: 14.69px;
   position: absolute;
-  left: 294.03px;
-  top: 599.76px;
+  left: 393.03px;
+  top: 556.76px;
   overflow: visible;
 }
 .map-pin2 {
   width: 15.02px;
   height: 14.69px;
   position: absolute;
-  left: 487px;
-  top: 599.76px;
+  left: 607px;
+  top: 556.76px;
   overflow: visible;
 }
 .fir-sec {
@@ -105,8 +105,8 @@
     width: 192px;
     height: 26px;
     position: absolute;
-    left: 285px;
-    top: 595px;
+    left: 385px;
+    top: 550px;
     padding-left: 23px;
   }
 .sec-rec {
@@ -115,8 +115,8 @@
     width: 192px;
     height: 26px;
     position: absolute;
-    left: 479px;
-    top: 595px;
+    left: 600px;
+    top: 550px;
     padding-left: 23px;
   }
 .search-rec {
@@ -125,92 +125,9 @@
   width: 104.12px;
   height: 25.92px;
   position: absolute;
-  left: 961.87px;
-  top: 593.71px;
+  left: 841.87px;
+  top: 550.71px;
   cursor: pointer;
-}
-.dropdown {
-  width: 77.09px;
-  height: 25.92px;
-  position: absolute;
-  left: 857.76px;
-  top: 593.71px;
-}
-.dropdown .dropbtn {
-    background-color: #d9d9d9;
-    width: 77.09px;
-    height: 25.92px;
-    font-weight: 500;
-    color: #000000;
-    padding: 1px 2px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    overflow-y: auto; 
-    max-height: 200px; 
-    z-index: 1;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
- }  
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .dropdown .dropbtn {
-    border: 1px solid #ccc;
-  }
-
-.passengers {
-  color: #000000;
-  text-align: center;
-  font-family: "Montserrat-Light", sans-serif;
-  font-size: 9px;
-  font-weight: 300;
-  position: absolute;
-  left: 5px;
-  top: -11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.date {
-  background: #d9d9d9;
-  border-radius: 5px;
-  width: 141px;
-  height: 26px;
-  position: absolute;
-  left: 707px;
-  top: 594px;
-  cursor: pointer;
-}
-.departure {
-  color: #000000;
-  text-align: center;
-  font-family: "Montserrat-Light", sans-serif;
-  font-size: 9px;
-  font-weight: 300;
-  position: absolute;
-  left: 712.71px;
-  top: 584.21px;
-  width: 47.62px;
-  height: 9.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .header-text {
   position: absolute;
