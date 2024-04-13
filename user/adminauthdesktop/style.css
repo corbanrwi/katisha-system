@@ -42,9 +42,10 @@ body{
   width: 166px;
   height: 161.07px;
   position: absolute;
-  left: 537px;
+  left: 527px;
   top: 12px;
   overflow: visible;
+  align-items: center;
 }
 
 .rectangle-10 {
@@ -98,7 +99,7 @@ body{
   width: 35px;
   height: 27px;
   position: absolute;
-  left: 361px;
+  left: 591px;
   top: 863px;
   overflow: visible;
 }
@@ -242,3 +243,11 @@ body{
 .submit {
   left: calc(117% + 25px); /* Adjusted to position next to the "BACK" button */
 }
+.-input i,
+.password-input2 i {
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 10px;
+    color: #aaa; /* Adjust the color of the icons */
+}
+
