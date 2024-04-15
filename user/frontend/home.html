@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/styles3.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katisha</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles/home-style.css">
+  <link rel="stylesheet" href="styles/vars.css">
 </head>
-<nav>
-    <img src="images/kati.png" alt="kati-kati">
-        <div class="links">
-            <a href="">Agencies</a>
-            <a href="">Help</a>
-            <a href="">About Us</a>
-            <a href="">Admin</a>
-        </div>
-</nav>
-<section class="wel">
-    <svg 
-        class="shapes"
-        width="2396"
-        height="1146"
-        viewBox="0 0 2396 1146"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse cx="2047" cy="503.5" rx="349" ry="300.5" fill="#F6E7CF" />
-        <path
-          d="M944.515 177.417L1463.93 924.439L147.977 617.144L944.515 177.417Z"
-          fill="#FFE0A8"
-        />
-        <ellipse
-          cx="1267.5"
-          cy="301"
-          rx="22.5"
-          ry="19"
-          fill="#FFDAA0"
-          fill-opacity="0.4"
-        />
-        <ellipse
-          cx="1662"
-          cy="820"
-          rx="43"
-          ry="40"
-          fill="#FFDAA0"
-          fill-opacity="0.4"
-        />
-    </svg>
-    <div class="wel_text">
-    <h1>WELCOME TO KATISHA</h1>
-    <p>We're thrilled to have you join us here at KATISHA,
-        your one-stop destination for hassle-free ticket bookings!<br> Whether you're planning a leisurely getaway,
-         a business trip, or attending a special event, we've got you covered.</p>
-    </div>
-    <form action="">
-       <p>From:</p><input  type="text"><i class="uil uil-map-marker"></i>
-        <p>To:</p><input  type="text"><i class="uil uil-map-marker"></i>
-        <button name="" >Search</button>
-     </form>
-</section>
-<footer>
-    &copy; Copyright 2024 BLACK
-  </footer>
 <body>
-    
+  <header class="hero is-warning is-fullheight">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <img src="images/kati.png" alt="Logo">
+            </a>
+            <span class="navbar-burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item" href="#">Agencies</a>
+              <a class="navbar-item" href="#">Help</a>
+              <a class="navbar-item" href="#">About Us</a>
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="#">Admin</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">WELCOME TO KATISHA</h1>
+        <p class="subtitle">
+          We're thrilled to have you join us here at KATISHA, your one-stop destination for hassle-free ticket bookings! Whether you're planning a leisurely getaway, a business trip, or attending a special event, we've got you covered.
+        </p>
+        <div class="field has-addons">
+          <div class="control">
+            <input class="input is-rounded" type="text" placeholder="From">
+          </div>
+          <div class="control">
+            <input class="input is-rounded" type="text" placeholder="To">
+          </div>
+          <div class="control">
+            <button class="button is-warning is-rounded">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>&copy; 2024 BLACK</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
