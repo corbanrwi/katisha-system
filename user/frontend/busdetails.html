@@ -55,7 +55,7 @@
             </figure>
           </div>
         </div>
-        <a href="#" class="button is-warning is-fullwidth">Book Now</a>
+        <a href="#" class="button bookButton is-warning">Book Now</a>
       </div>
     </div>
 
@@ -71,5 +71,28 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bookBusButtons = document.querySelectorAll('.bookButton')
+      bookBusButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          const card = button.closest('.card')
+            const busDetails = {
+              title: card.querySelector('.title').innerText,
+              time: card.querySelector('.time').innerText,
+              seats: card.querySelector('.subtitle').innerHTML.split(' ')[0],
+              imageUrl: card.querySelector('img').getAttribute('src')
+
+            }
+
+            const queryParams = new URLSearchParams(busDetails).toString();
+            window.location.href = `det.html?${queryParams}`
+          
+        })
+      })
+    })
+  </script>
 </body>
 </html>
+
