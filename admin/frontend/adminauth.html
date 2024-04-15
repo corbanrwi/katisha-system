@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Katisha Admin</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+  <style>
+    body {
+      background-color: yellow;
+    }
+    .form-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .form-card {
+      max-width: 400px;
+      width: 100%;
+      padding:  90px 60px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f28c06;
+    }
+    .form-group {
+      position: relative;
+    }
+    .form-group input {
+      padding-left: 40px; /* Space for icon */
+    }
+    .form-group i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row form-container">
+    <div class="col-md-6">
+      <img src="images/kati.png" alt="Katisha Admin" class="img-fluid" >
+    </div>
+    <div class="col-md-6">
+      <div class="card form-card">
+        <div class="card-body">
+          <h2 class="card-title">Welcome Admin !</h2>
+          <form>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="row">
+             
+              <div class="col-md-6">
+                <div class="form-group">
+                  <button type="button" class="btn btn-secondary btn-block">Back</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block" style="background-color: orangered;">Login</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
