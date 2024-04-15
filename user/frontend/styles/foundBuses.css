@@ -1,0 +1,98 @@
+
+body {
+    background-color: #f5f5f5;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0; /* Added to remove default margin */
+  }
+  
+  .navbar {
+    background-color: rgba(255, 204, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 204, 0, 0.5);
+    position: sticky;
+    top: 0; /* Make navbar stick to the top */
+    z-index: 1000; /* Ensure the navbar appears above other elements */
+  }
+  
+  .navbar-item {
+    color: #000;
+    transition: color 0.3s;
+  }
+
+  .navbar-item:hover {
+    color: #ff8c00; /* Change color on hover */
+  }
+  
+  .card {
+    background-color: #ffffff;
+    color: #000;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: bold;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(255, 204, 0, 0.5);
+    border-color: rgba(255, 204, 0, 0.5);
+  }
+  
+  .badge-primary {
+    background-color: #ffd700;
+    font-weight: normal;
+  }
+  
+  .time {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+  }
+  
+  footer {
+    background-color: rgba(255, 204, 0, 0.5);
+    color: #000;
+  }
+  
+  .background-shape-1 {
+    position: absolute;
+    top: -50px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 204, 0, 0.5);
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+  
+  .background-shape-2 {
+    position: absolute;
+    bottom: -100px;
+    right: -200px;
+    width: 400px;
+    height: 400px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+
+  /* Hide vertical scrollbar */
+  html {
+    overflow-y: scroll;
+  }
+
+  /* Hide horizontal scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar in Firefox */
+  body {
+    scrollbar-width: none;
+  }
