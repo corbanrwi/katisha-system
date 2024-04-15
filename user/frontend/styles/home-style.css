@@ -38,3 +38,32 @@ html, body {
   .input, .button {
     border-radius: 25px;
   }
+
+.autocomplete-suggestions {
+  position: absolute;
+  width: calc(100% - 20px);
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.suggestion {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+.autocomplete-suggestions {
+  display: none;
+}
+
+.no-suggestions {
+  
+}

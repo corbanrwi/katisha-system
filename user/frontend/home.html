@@ -44,13 +44,15 @@
         </p>
         <div class="field has-addons">
           <div class="control">
-            <input class="input is-rounded" type="text" placeholder="From">
+            <input class="input is-rounded" id="from" type="text" placeholder="From">
+            <div id="fromSuggestions" class="autocomplete-suggestions"></div>
           </div>
           <div class="control">
-            <input class="input is-rounded" type="text" placeholder="To">
+            <input class="input is-rounded" id="to" type="text" placeholder="To">
+            <div id="toSuggestions" class="autocomplete-suggestions"></div>
           </div>
           <div class="control">
-            <button class="button is-warning is-rounded">Search</button>
+            <button class="button is-warning is-rounded" id="searchBtn">Search</button>
           </div>
         </div>
       </div>
@@ -62,7 +64,7 @@
       <p>&copy; 2024 BLACK</p>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -78,6 +80,89 @@
         });
       }
     });
+    document.getElementById('from').addEventListener('input', function () {
+            const fromSuggestions = document.getElementById('fromSuggestions')
+            const query = this.value;
+            if (query.length > 0) {
+                axios.get(`http://localhost:4000/locations?q=${query}`)
+                    .then(function(response) {
+                        const suggestions = response.data;
+                        if(suggestions.length > 0){
+                        fromSuggestions.style.display = 'block'
+                        const suggestionsList = suggestions.map(suggestion => `<div class="suggestion">${suggestion.location_name}</div>`).join('');
+                        document.getElementById('fromSuggestions').innerHTML = suggestionsList;
+
+                        const suggestionElements = document.querySelectorAll('.suggestion');
+                        suggestionElements.forEach(suggestion => {
+                            suggestion.addEventListener('click', function() {
+                                document.getElementById('from').value = this.innerText;
+                                document.getElementById('fromSuggestions').innerHTML = '';
+                            });
+                          
+                        });
+                      }else {
+                        fromSuggestions.innerHTML = '<div class="no-suggestions">Location does not exist</div>';
+                        fromSuggestions.style.display = 'block';
+                      }
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
+            } else {
+                document.getElementById('fromSuggestions').innerHTML = '';
+            }
+        });
+
+        document.getElementById('to').addEventListener('input', function () {
+            const query = this.value;
+            const toSuggestions = document.getElementById('toSuggestions')
+            if (query.length > 0) {
+                axios.get(`http://localhost:4000/locations?q=${query}`)
+                    .then(function(response) {
+                        const suggestions = response.data;
+                        if( suggestions.length > 0 ) {
+                          toSuggestions.style.display = 'block'
+                        const suggestionsList = suggestions.map(suggestion => `<div class="suggestion">${suggestion.location_name}</div>`).join('');
+                        document.getElementById('toSuggestions').innerHTML = suggestionsList;
+
+                        const suggestionElements = document.querySelectorAll('.suggestion');
+                        suggestionElements.forEach(suggestion => {
+                            suggestion.addEventListener('click', function() {
+                                document.getElementById('to').value = this.innerText;
+                                document.getElementById('toSuggestions').innerHTML = '';
+                            });
+                        });
+                      }else{
+                        
+                        toSuggestions.innerHTML = '<div class="no-suggestions">Location does not exist</div>';
+                        toSuggestions.style.display = 'block';
+                      }
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
+            } else {
+                document.getElementById('toSuggestions').innerHTML = '';
+            }
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            if (from === to) {
+                alert("Can't be the same place of departure and arrival");
+            } else {
+                axios.post('http://localhost:4000/search', {from, to})
+                    .then(function(response) {
+                        console.log(response.data);
+                        window.location.href = `/bus-details?from=${from}&to=${to}&data=${JSON.stringify(response.data)}`;
+                    })
+                    .catch(function(error) {
+                        console.error("Error:", error);
+                        alert("An error occured while tring to search buses. Please try again later!")
+                    });
+            }
+        });
   </script>
 </body>
 </html>
