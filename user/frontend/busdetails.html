@@ -4,130 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Available Buses</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles/foundBuses.css">
   <style>
-    body {
-      background-color: #f5f5f5;
-      position: relative;
-      overflow-x: hidden;
-    }
-    .navbar {
-      background-color: #fff8e1;
-    }
-    .nav-link {
-      color: #ffa500;
-    }
-    .card {
-      background-color: #fff8e1;
-      color: #333;
-    }
-    .btn-primary {
-      background-color: #ffa500;
-      border-color: #ffa500;
-      border-radius: 20px;
-      padding: 8px 20px;
-      font-weight: bold;
-    }
-    .btn-primary:hover {
-      background-color: #ff8c00;
-      border-color: #ff8c00;
-    }
-    .btn-primary:focus {
-      box-shadow: none;
-    }
-    .badge-primary {
-      background-color: #ffa500;
-      font-weight: normal;
-    }
-    .time {
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffa500;
-    }
-    footer {
-      background-color: #fff8e1;
-      color: #333;
-    }
-    .background-shape-1 {
-      position: absolute;
-      top: -50px;
-      left: -150px;
-      width: 300px;
-      height: 300px;
-      background-color: #ffa500;
-      border-radius: 50%;
-      opacity: 0.2;
-    }
-    .background-shape-2 {
-      position: absolute;
-      bottom: -100px;
-      right: -200px;
-      width: 400px;
-      height: 400px;
-      background-color: #ffa500;
-      border-radius: 50%;
-      opacity: 0.2;
-    }
   </style>
 </head>
 <body>
   <div class="background-shape-1"></div>
   <div class="background-shape-2"></div>
 
-  <nav class="navbar navbar-expand-sm">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <i class="bi bi-bus"></i> Agencies
-      </a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Admin</a>
-        </li>
-      </ul>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <img src="images/kati.png" alt="Logo">
+        </a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#">Agencies</a>
+          <a class="navbar-item" href="#">Help</a>
+          <a class="navbar-item" href="#">About Us</a>
+          <div class="navbar-item">
+            <a class="button is-white is-outlined" href="#">Admin</a>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 
   <div class="container mt-4">
-    <h2>Available buses</h2>
-    <button class="btn btn-primary mb-3">sort by earliest buses</button>
+    <h2 class="title">Available buses</h2>
+    <button class="button is-warning mb-3">Sort by earliest buses</button>
 
-    <div class="card mb-3">
-      <div class="card-body d-flex justify-content-between align-items-center">
-        <div>
-          <h5 class="card-title">RAD 404 - Lorem Musanze-Kigali</h5>
-          <p class="card-text"><span class="time">12:00</span> <span class="badge badge-primary">26 seats available</span></p>
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">RAD 404 - Lorem Musanze-Kigali</p>
+            <p class="subtitle is-6"><span class="time">12:00</span> <span class="tag is-warning">26 seats available</span></p>
+          </div>
+          <div class="media-right">
+            <figure class="image is-64x64">
+              <img src="https://picsum.photos/id/1/50/50" alt="Agency Logo">
+            </figure>
+          </div>
         </div>
-        <img src="https://picsum.photos/id/1/50/50" alt="Agency Logo" class="rounded-circle">
+        <a href="#" class="button bookButton is-warning">Book Now</a>
       </div>
-      <a href="#" class="btn btn-primary btn-block">Book Now</a>
     </div>
 
-    <div class="card mb-3">
-      <div class="card-body d-flex justify-content-between align-items-center">
-        <div>
-          <h5 class="card-title">RAD 406 B - Lorem Musanze-Kigali</h5>
-          <p class="card-text"><span class="time">16:00</span> <span class="badge badge-primary">25 seats available</span></p>
-        </div>
-        <img src="https://picsum.photos/id/2/50/50" alt="Agency Logo" class="rounded-circle">
-      </div>
-      <a href="#" class="btn btn-primary btn-block">Book Now</a>
-    </div>
+   
 
-    <!-- Add more bus cards here -->
   </div>
 
-  <footer class="py-3 mt-5 text-center">
-    &copy; Copyright 2024 BLACK
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>&copy; Copyright 2024 BLACK</p>
+    </div>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bookBusButtons = document.querySelectorAll('.bookButton')
+      bookBusButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          const card = button.closest('.card')
+            const busDetails = {
+              title: card.querySelector('.title').innerText,
+              time: card.querySelector('.time').innerText,
+              seats: card.querySelector('.subtitle').innerHTML.split(' ')[0],
+              imageUrl: card.querySelector('img').getAttribute('src')
+
+            }
+
+            const queryParams = new URLSearchParams(busDetails).toString();
+            window.location.href = `det.html?${queryParams}`
+          
+        })
+      })
+    })
+  </script>
 </body>
 </html>
+
