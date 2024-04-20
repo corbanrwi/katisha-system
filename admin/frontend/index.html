@@ -1,14 +1,113 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KATISHA SYSTEM - Welcome</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/vars.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Katisha Admin</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+  <style>
+   body {
+  background: linear-gradient(145deg, #e2b502, #ffeebb);
+}
+
+    .form-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .form-card {
+      max-width: 400px;
+      width: 100%;
+      padding:  90px 60px;
+      border:none;
+      border-radius: 10px;
+      background-color: #ffeebb;
+    }
+    .form-group {
+      position: relative;
+    }
+    .form-group input {
+      padding-left: 40px; /* Space for icon */
+    }
+    .form-group i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <!-- Add code from AutoHTML here -->
+
+<div class="container">
+  <div class="row form-container">
+    <div class="col-md-6">
+      <img src="images/kati.png" alt="Katisha Admin" class="img-fluid" >
+    </div>
+    <div class="col-md-6">
+      <div class="card form-card">
+        <div class="card-body">
+          <h2 class="card-title">Welcome Admin !</h2>
+          <form>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="row">
+             
+              <div class="col-md-6">
+                <div class="form-group">
+                  <button type="button" class="btn btn-secondary btn-block">Back</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-warning btn-block">Login</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.querySelector('input[type="email"]').value;
+            const password  = document.querySelector('input[type="password"]').value;
+
+            axios.post('http://localhost:4000/login', {email, password}) 
+            .then (function (response) {
+                console.log(response.data);
+                alert("Logged in successfuly")
+            })
+            .catch(function(error) {
+                console.error('Error', error);
+                alert('Invalid email or password');
+            })
+        })
+    })
+</script>
 </body>
 </html>

@@ -6,7 +6,7 @@ const path = require('path')
 const qr = require('qrcode')
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4050;
 
 const conn = mysql.createConnection({
     host: 'localhost',
@@ -26,6 +26,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../frontend/')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
 
 app.get('/locations',(req, res) => {
     const query = req.query.q;
@@ -165,5 +169,5 @@ app.post('/payemnt', (req, res)=> {
    }
 
 app.listen(PORT, () => {
-    console.log(`Server listening on port  http://localhost${PORT}`);
+    console.log(`Server listening on port  http://localhost ${PORT}`);
 })
