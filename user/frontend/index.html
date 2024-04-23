@@ -35,7 +35,7 @@
         document.getElementById('from').addEventListener('input', function () {
             const query = this.value;
             if (query.length > 0) {
-                axios.get(`http://localhost:4000/locations?q=${query}`)
+                axios.get(`http://localhost:4050/locations?q=${query}`)
                     .then(function(response) {
                         const suggestions = response.data;
                         const suggestionsList = suggestions.map(suggestion => `<div class="suggestion">${suggestion.location_name}</div>`).join('');
@@ -60,7 +60,7 @@
         document.getElementById('to').addEventListener('input', function () {
             const query = this.value;
             if (query.length > 0) {
-                axios.get(`http://localhost:4000/locations?q=${query}`)
+                axios.get(`http://localhost:4050/locations?q=${query}`)
                     .then(function(response) {
                         const suggestions = response.data;
                         const suggestionsList = suggestions.map(suggestion => `<div class="suggestion">${suggestion.location_name}</div>`).join('');
@@ -88,7 +88,7 @@
             if (from === to) {
                 alert("Can't be the same place of departure and arrival");
             } else {
-                axios.post('http://localhost:4000/search', {from, to})
+                axios.post('http://localhost:4050/search', {from, to})
                     .then(function(response) {
                         console.log(response.data);
                         window.location.href = `/bus-details?from=${from}&to=${to}&data=${JSON.stringify(response.data)}`;
