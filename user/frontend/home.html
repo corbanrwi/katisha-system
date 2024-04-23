@@ -64,7 +64,7 @@
       <p>&copy; 2024 BLACK</p>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -84,7 +84,7 @@
             const fromSuggestions = document.getElementById('fromSuggestions')
             const query = this.value;
             if (query.length > 0) {
-                axios.get(`http://localhost:4000/locations?q=${query}`)
+                axios.get(`http://localhost:4050/locations?q=${query}`)
                     .then(function(response) {
                         const suggestions = response.data;
                         if(suggestions.length > 0){
@@ -117,7 +117,7 @@
             const query = this.value;
             const toSuggestions = document.getElementById('toSuggestions')
             if (query.length > 0) {
-                axios.get(`http://localhost:4000/locations?q=${query}`)
+                axios.get(`http://localhost:4050/locations?q=${query}`)
                     .then(function(response) {
                         const suggestions = response.data;
                         if( suggestions.length > 0 ) {
@@ -152,7 +152,7 @@
             if (from === to) {
                 alert("Can't be the same place of departure and arrival");
             } else {
-                axios.post('http://localhost:4000/search', {from, to})
+                axios.post('http://localhost:4050/search', {from, to})
                     .then(function(response) {
                         console.log(response.data);
                         window.location.href = `/bus-details?from=${from}&to=${to}&data=${JSON.stringify(response.data)}`;
