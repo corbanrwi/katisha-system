@@ -54,14 +54,17 @@
                 <form id="busForm" style="margin-top: 20px;">
                     <div class="form-container">
                         <div class="form-group">
-                            <label for="name">Name of Driver:</label>
-                            <input type="text" id="agencyName" name="agencyName">
+                            <label for="drivername">Name of Driver:</label>
+                            <input type="text" id="driverName" name="driverName">
                         </div>
                         <div class="form-group">
-                            <label for="name">Number of Sits:</label>
-                            <input type="text" id="agencyName" name="agencyName">
+                            <label for="numberOfSeats">Number of Seats:</label>
+                            <select id="numberOfSeats" name="numberOfSeats" style="width: 140px; height: 35px;">
+                                <!-- JavaScript will populate options -->
+                            </select>
                         </div>
-
+                        
+                        
                         <div class="form-group">
                             <label for="name">Bus ID:</label>
                             <input type="text" id="agencyName" name="agencyName">
@@ -105,15 +108,17 @@
         const formData = new FormData(busForm);
         const busRoute = {};
         let isFormValid = true;
-
         formData.forEach((value, key) => {
-            if (value.trim() === '') {
-                isFormValid = false;
-            } else {
-                busRoute[key] = value;
-            }
-        });
-
+    if (value.trim() === '') {
+        isFormValid = false;
+    } else {
+        if (key === 'agencyName') {
+            busRoute['busId'] = value;
+        } else {
+            busRoute[key] = value;
+        }
+    }
+});
         if (isFormValid) {
             // Store bus route in local storage
             let busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
@@ -127,6 +132,49 @@
         }
     });
 });
+
+
+const numberOfSeatsDropdown = document.getElementById('numberOfSeats');
+
+// Populate options from 1 to 100
+for (let i = 0; i <= 999; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    numberOfSeatsDropdown.appendChild(option);
+}
+
+// Function to handle custom number input
+function handleCustomInput() {
+    const customNumber = prompt('Enter the number of seats:');
+    if (customNumber !== null && !isNaN(customNumber)) {
+        // Check if the custom number already exists as an option
+        const existingOption = Array.from(numberOfSeatsDropdown.options).find(option => option.value === customNumber);
+        if (existingOption) {
+            // If the custom number already exists, select it
+            existingOption.selected = true;
+        } else {
+            // If the custom number doesn't exist, add it as a new option
+            const newOption = document.createElement('option');
+            newOption.value = customNumber;
+            newOption.textContent = customNumber;
+            numberOfSeatsDropdown.appendChild(newOption);
+            newOption.selected = true;
+        }
+    } else {
+        // If user cancels or enters invalid input, revert back to previous selection
+        numberOfSeatsDropdown.selectedIndex = 0; // Select the first option
+    }
+}
+
+// Event listener to handle custom number input
+numberOfSeatsDropdown.addEventListener('change', function() {
+    if (this.value === 'custom') {
+        handleCustomInput();
+    }
+});
+
+
     </script>
 </body>
 </html>
