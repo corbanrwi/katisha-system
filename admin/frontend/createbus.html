@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD: Create</title>
     <link rel="stylesheet" href="styles/style2.css">
-   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlTt..."/>
-<link rel="stylesheet" href="font awesome/css/all.css">
-
-    <!--cdn link -->
+    <link rel="stylesheet" href="font awesome/css/all.css">
+    <style>
+       
+    </style>
 </head>
 <body>
-    
     <div class="container">
         <nav>
             <ul>
@@ -21,76 +20,101 @@
                         <div class="user-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                    
                         <span class="nav-itemi">Hey Admin!</span>
-                        
                     </a>
-                    
                 </li>
                 <li><a href="darshtt.html">
                     <i class=" fas fa-bus"></i>
                     <span class="nav-item">Manage Bus</span>
-
                 </a></li>
                 <li><a href="darshboard.html">
                     <i class=" fas fa-building"></i>
                     <span class="nav-item">Agencies</span>
-
                 </a></li>
                 <li><a href="login and registration.html">
                     <i class=" fas fa-question-circle"></i>
                     <span class="nav-item">Help</span>
-
-               
+                </a></li>
                 <li><a href="about us.html">
                     <i class=" fas fa-info-circle"></i>
                     <span class="nav-item">About Us</span>
-
                 </a></li>
                 <li><a href="#" class="logout">
                     <i class=" fas fa-sign-out-alt"></i>
                     <span class="nav-item">Log out</span>
-
                 </a></li>
             </ul>
         </nav>
         
-        
-      
         <div class="content">
             <img src="kati.png" alt="">
             <section style="background-color: white;">
                 <h2>Add bus on route!</h2>
-                <form style="margin-top: 20px;">
+                <form id="busForm" style="margin-top: 20px;">
                     <div class="form-container">
                         <div class="form-group">
-                          <label for="name">Agency name:</label>
-                          <input type="text" id="name" name="name">
+                            <label for="name">Bus ID:</label>
+                            <input type="text" id="agencyName" name="agencyName">
                         </div>
                         <div class="form-group">
                             <label for="from">
-                              <i class="fas fa-map-marker-alt icon"></i>Destination:
+                                <i class="fas fa-map-marker-alt icon"></i>Destination:
                             </label>
-                            <input type="text" id="from" name="from" placeholder="From">
-                          </div>
-                        <div class="form-group">
-                          <label for="from">
-                           </i>Uptime:
-                          </label>
-                          <input type="text" id="from" name="from" placeholder="From">
+                            <input type="text" id="from" name="destination" placeholder="From">
                         </div>
                         <div class="form-group">
-                          <label for="to">
-                           </i>Reachtime:
-                          </label>
-                          <input type="text" id="to" name="to" placeholder="To">
+                            <label for="uptime">
+                                <i class="fas fa-clock icon"></i>Uptime:
+                            </label>
+                            <input type="text" id="uptime" name="uptime" placeholder="Uptime">
                         </div>
-                      </div>
-                      <button type="submit">Add</button>
-                  </form>
+                        <div class="form-group">
+                            <label for="reachtime">
+                                <i class="fas fa-clock icon"></i>Reach Time:
+                            </label>
+                            <input type="text" id="reachtime" name="reachtime" placeholder="Reach Time">
+                        </div>
+                    </div>
+                    <button type="button" id="addButton">Add</button>
+                </form>
             </section>
         </div>
-        
     </div>
-        </body>
-        </html>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const addButton = document.getElementById('addButton');
+    const busForm = document.getElementById('busForm');
+
+    addButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        // Get form values
+        const formData = new FormData(busForm);
+        const busRoute = {};
+        let isFormValid = true;
+
+        formData.forEach((value, key) => {
+            if (value.trim() === '') {
+                isFormValid = false;
+            } else {
+                busRoute[key] = value;
+            }
+        });
+
+        if (isFormValid) {
+            // Store bus route in local storage
+            let busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
+            busRoutes.push(busRoute);
+            localStorage.setItem('busRoutes', JSON.stringify(busRoutes));
+
+            // Redirect to read.html after adding bus route
+            window.location.href = 'read.html';
+        } else {
+            alert('Please fill in all the fields before adding a bus route.');
+        }
+    });
+});
+    </script>
+</body>
+</html>
