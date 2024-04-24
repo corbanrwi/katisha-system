@@ -53,6 +53,14 @@
                 <h2>Add bus on route!</h2>
                 <form id="busForm" style="margin-top: 20px;">
                     <div class="form-container">
+                        <div class="form-group">
+                            <label for="name">Name of Driver:</label>
+                            <input type="text" id="agencyName" name="agencyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Number of Sits:</label>
+                            <input type="text" id="agencyName" name="agencyName">
+                        </div>
 
                         <div class="form-group">
                             <label for="name">Bus ID:</label>
@@ -67,18 +75,19 @@
                         </div>
                         <div class="form-group">
                             <label for="uptime">
-                                <i class="fas fa-clock icon"></i>Uptime:
+                               </i>Uptime:
                             </label>
-                            <input type="text" id="uptime" name="uptime" placeholder="Uptime">
+                            <input type="tIME" id="uptime" name="uptime" placeholder="Uptime">
                         </div>
                         <div class="form-group">
                             <label for="reachtime">
-                                <i class="fas fa-clock icon"></i>Reach Time:
+                              </i>Reach Time:
                             </label>
-                            <input type="text" id="reachtime" name="reachtime" placeholder="Reach Time">
+                            <input type="time" id="reachtime" name="reachtime" placeholder="Reach Time">
                         </div>
                     </div>
                     <button type="button" id="addButton">Add</button>
+                    <button onclick="window.location.href='read.html'" type="button" id="addButton">View Bus on route</button>
                 </form>
             </section>
         </div>

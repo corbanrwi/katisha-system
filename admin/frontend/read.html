@@ -69,7 +69,7 @@
             const busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
 
             if (busRoutes.length === 0) {
-                busRoutesContainer.innerHTML = '<p>No bus routes added yet!</p>';
+                busRoutesContainer.innerHTML = '<p style="color:red;  width:200px; height:20px;text-align:center;;margin-top:150px; margin-left:420px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">No bus routes added yet!</p>';
             } else {
                 busRoutes.forEach(function(route, index) {
                     const busRouteBox = document.createElement('div');
@@ -81,7 +81,7 @@
                             
                             <div class="logo">
                                 <img src="images/mtn.png" alt="Agency Logo">
-                                <span>${route.agencyName}</span>
+                               <p><b>Bus ID:</b></p?<span>${route.agencyName}</span>
                             </div>
                         </div>
                     
