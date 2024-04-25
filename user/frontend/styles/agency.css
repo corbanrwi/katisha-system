@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #ff6b00;
+  }
+  nav figure img{
+    width: 40%;
+    height: 40%;
+  }
+  .section h1{
+    transition: transform 0.5s ;
+    
+  }
+  h1:hover{
+    transform: translateY(-10px);
+  }
+  
+  
+  
+  .card {
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 8px 0 rgba(0.5,0.5,0.5,0.5);
+  }
