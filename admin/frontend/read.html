@@ -8,7 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlTt..."/>
     <link rel="stylesheet" href="font awesome/css/all.css">
     <style>
-       
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            border-radius: 12px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+          
+        }
     </style>
 </head>
 <body>
@@ -27,14 +62,11 @@
                     <i class=" fas fa-bus"></i>
                     <span class="nav-item">Manage Bus</span>
                 </a></li>
-<<<<<<< HEAD
+
                 <li><a href="darshboard.html">
                     <i class=" fas fa-building"></i>
                     <span class="nav-item">Agencies</span>
-=======
-
->>>>>>> 38e83010ddd423fc0c29203b345a805057c2f6c5
-                </a></li>
+              </a></li>
                 <li><a href="login and registration.html">
                     <i class=" fas fa-question-circle"></i>
                     <span class="nav-item">Help</span>
@@ -56,20 +88,31 @@
                
             </div>
             <div class="butadd">
-            <button onclick="window.location.href='createbus.html'" style="background-color: orange; cursor: pointer; border-radius: 12px; width: 100px; height: 30px;">+ New bus</button>
-        </div>
+                <button onclick="window.location.href='createbus.html'" style="background-color: orange; cursor: pointer; border-radius: 12px; width: 100px; height: 30px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='orangered'" onmouseout="this.style.backgroundColor='orange'">+ New bus</button>
+            </div>
+            
             <div id="busRoutesContainer"></div>
         </div>
     </div>
 
-  
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="margin: 20px 90px;">Bus Details</h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const busRoutesContainer = document.getElementById('busRoutesContainer');
             const busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
+            const detailsModal = document.getElementById('detailsModal');
+            const modalContent = document.getElementById('modalContent');
+            const closeBtn = detailsModal.querySelector('.close');
 
             if (busRoutes.length === 0) {
-                busRoutesContainer.innerHTML = '<p>No bus routes added yet!</p>';
+                busRoutesContainer.innerHTML = '<p style="color:red; width:200px; height:20px;text-align:center;margin-top:150px; margin-left:420px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">No bus routes added yet!</p>';
             } else {
                 busRoutes.forEach(function(route, index) {
                     const busRouteBox = document.createElement('div');
@@ -81,7 +124,7 @@
                             
                             <div class="logo">
                                 <img src="images/mtn.png" alt="Agency Logo">
-                                <span>${route.agencyName}</span>
+                               <p><b>Bus ID:</b></p?<span>${route.busId}</span>
                             </div>
                         </div>
                     
@@ -90,12 +133,25 @@
                             <span class="reachtime">Reach Time: ${route.reachtime}</span>
                         </div>
                         <div class="buttonsi">
-                            <button>View Details</button>
+                            <button class="view-details-btn">View Details</button>
                             <button>Update Bus</button>
                             <button class="delete-btn">Delete Bus</button>
                         </div>
                     `;
                     busRoutesContainer.appendChild(busRouteBox);
+
+                    const viewDetailsBtn = busRouteBox.querySelector('.view-details-btn');
+                    viewDetailsBtn.addEventListener('click', function() {
+                        modalContent.innerHTML = `
+                            <p><strong>Driver's Name:</strong> ${route.driverName}</p>
+                            <p><strong>Bus ID:</strong> ${route.busId}</p>
+                            <p><strong>Destination:</strong> ${route.destination}</p>
+                            <p><strong>Uptime:</strong> ${route.uptime}</p>
+                            <p><strong>Reach Time:</strong> ${route.reachtime}</p>
+                            <p><strong>Number of Seats:</strong> ${route.numberOfSeats}</p>
+                        `;
+                        detailsModal.style.display = 'block';
+                    });
 
                     const deleteBtn = busRouteBox.querySelector('.delete-btn');
                     deleteBtn.addEventListener('click', function() {
@@ -107,6 +163,16 @@
                     });
                 });
             }
+
+            closeBtn.addEventListener('click', function() {
+                detailsModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === detailsModal) {
+                    detailsModal.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>

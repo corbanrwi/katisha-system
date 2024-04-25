@@ -190,6 +190,7 @@ a:hover i{
         button {
             padding: 10px 20px;
             background-color: orange;
+            margin: 0px 20px;
             color: white;
             border: none;
             border-radius: 5px;

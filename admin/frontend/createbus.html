@@ -27,8 +27,14 @@
                     <i class=" fas fa-bus"></i>
                     <span class="nav-item">Manage Bus</span>
                 </a></li>
+<<<<<<< HEAD
+                <li><a href="darshboard.html">
+                    <i class=" fas fa-building"></i>
+                    <span class="nav-item">Agencies</span>
+=======
                 
 
+>>>>>>> 38e83010ddd423fc0c29203b345a805057c2f6c5
                 </a></li>
                 <li><a href="login and registration.html">
                     <i class=" fas fa-question-circle"></i>
@@ -51,7 +57,14 @@
                 <h2>Add bus on route!</h2>
                 <form id="busForm" style="margin-top: 20px;">
                     <div class="form-container">
+<<<<<<< HEAD
+                        <div class="form-group">
+                            <label for="name">Bus ID:</label>
+                            <input type="text" id="agencyName" name="agencyName">
+                        </div>
+=======
                         
+>>>>>>> 38e83010ddd423fc0c29203b345a805057c2f6c5
                         <div class="form-group">
                             <label for="from">
                                 <i class="fas fa-map-marker-alt icon"></i>Destination:
@@ -60,18 +73,19 @@
                         </div>
                         <div class="form-group">
                             <label for="uptime">
-                                <i class="fas fa-clock icon"></i>Uptime:
+                               </i>Uptime:
                             </label>
-                            <input type="text" id="uptime" name="uptime" placeholder="Uptime">
+                            <input type="tIME" id="uptime" name="uptime" placeholder="Uptime">
                         </div>
                         <div class="form-group">
                             <label for="reachtime">
-                                <i class="fas fa-clock icon"></i>Reach Time:
+                              </i>Reach Time:
                             </label>
-                            <input type="text" id="reachtime" name="reachtime" placeholder="Reach Time">
+                            <input type="time" id="reachtime" name="reachtime" placeholder="Reach Time">
                         </div>
                     </div>
                     <button type="button" id="addButton">Add</button>
+                    <button onclick="window.location.href='read.html'" type="button" id="addButton">View Bus on route</button>
                 </form>
             </section>
         </div>
@@ -89,15 +103,17 @@
         const formData = new FormData(busForm);
         const busRoute = {};
         let isFormValid = true;
-
         formData.forEach((value, key) => {
-            if (value.trim() === '') {
-                isFormValid = false;
-            } else {
-                busRoute[key] = value;
-            }
-        });
-
+    if (value.trim() === '') {
+        isFormValid = false;
+    } else {
+        if (key === 'agencyName') {
+            busRoute['busId'] = value;
+        } else {
+            busRoute[key] = value;
+        }
+    }
+});
         if (isFormValid) {
             // Store bus route in local storage
             let busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
@@ -111,6 +127,49 @@
         }
     });
 });
+
+
+const numberOfSeatsDropdown = document.getElementById('numberOfSeats');
+
+// Populate options from 1 to 100
+for (let i = 0; i <= 999; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    numberOfSeatsDropdown.appendChild(option);
+}
+
+// Function to handle custom number input
+function handleCustomInput() {
+    const customNumber = prompt('Enter the number of seats:');
+    if (customNumber !== null && !isNaN(customNumber)) {
+        // Check if the custom number already exists as an option
+        const existingOption = Array.from(numberOfSeatsDropdown.options).find(option => option.value === customNumber);
+        if (existingOption) {
+            // If the custom number already exists, select it
+            existingOption.selected = true;
+        } else {
+            // If the custom number doesn't exist, add it as a new option
+            const newOption = document.createElement('option');
+            newOption.value = customNumber;
+            newOption.textContent = customNumber;
+            numberOfSeatsDropdown.appendChild(newOption);
+            newOption.selected = true;
+        }
+    } else {
+        // If user cancels or enters invalid input, revert back to previous selection
+        numberOfSeatsDropdown.selectedIndex = 0; // Select the first option
+    }
+}
+
+// Event listener to handle custom number input
+numberOfSeatsDropdown.addEventListener('change', function() {
+    if (this.value === 'custom') {
+        handleCustomInput();
+    }
+});
+
+
     </script>
 </body>
 </html>
