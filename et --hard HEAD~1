@@ -1,0 +1,252 @@
+[33mcommit 338cc834a9409168896570d520f79550b69770b1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdesign_team[m[33m, [m[1;31morigin/design_team[m[33m)[m
+Merge: 5ef9f08 f306676
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Thu Apr 25 22:01:27 2024 +0000
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit 5ef9f08b46c4a276abf8bce02b0681e48c8da792[m
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Thu Apr 25 21:59:46 2024 +0000
+
+    i've added the agency pager in the user-frontend
+
+[33mcommit f30667686d67a7c96f4d7ee51363f49cd3b80206[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Thu Apr 25 08:06:20 2024 -0700
+
+    hover bt.
+
+[33mcommit 7eee2b4a3541bd16f419e07b59356fcaac686314[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Wed Apr 24 11:01:26 2024 -0700
+
+    done with view details
+
+[33mcommit 4c16eec4cb34a7fcbb92158d6137386e6edf7815[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Wed Apr 24 09:11:56 2024 -0700
+
+    increased fields in createbus.html
+
+[33mcommit 90310200705c90dfa205d351dc2424eb064cba28[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Tue Apr 23 22:10:14 2024 -0700
+
+    changed a bit
+
+[33mcommit b95e4c426db7f8c24a32139f53dbccc29e3dd4c4[m
+Merge: 9478e4a 38e8301
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Tue Apr 23 22:04:07 2024 -0700
+
+    connected createbus and readbus.
+
+[33mcommit 9478e4a33b6c7aea39667fd9ec5cb941df55ea3f[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Tue Apr 23 22:01:37 2024 -0700
+
+    put validation and connete createbus and readbus
+
+[33mcommit 38e83010ddd423fc0c29203b345a805057c2f6c5[m
+Merge: f2d274b e43bd88
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Tue Apr 23 19:06:21 2024 +0000
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit f2d274ba923c50160454d7201057270ad38734c4[m
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Tue Apr 23 11:40:50 2024 +0000
+
+    removed agency link and agency input
+
+[33mcommit e43bd88d19c166144dc3eb3191bae6a32f4f9e36[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Tue Apr 23 09:37:03 2024 +0200
+
+    Changed the axios sending endpointrs to become the same as the ones on the server
+
+[33mcommit 2488412dace3c9690b207bce80d0eb7dc6d8a5e4[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 22 20:22:36 2024 +0200
+
+    Added up to date database
+
+[33mcommit 8aea3651eb9c3bed12b5c7b459f264a6fdb3a1c7[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 22 19:49:20 2024 +0200
+
+    Deoeted a redudant file that was made index.html
+
+[33mcommit d1b258663e441987a0d0e7199ba83bd118526f05[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Sun Apr 21 00:09:27 2024 +0200
+
+    Merged admin authentication back and front then changed port for user backend for testing issues
+
+[33mcommit 060a118c9da1ca543ff8afab73b0c9afeeb7f4cd[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Sat Apr 20 18:20:12 2024 -0700
+
+    CRUD process
+
+[33mcommit 9d5753bc36e4c3682d726fad5f0b33f19bf5e8c9[m
+Merge: f096103 1e7c697
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Fri Apr 19 21:33:06 2024 -0700
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit f09610339861ad89bfcc6bea7d3be0b231ddaa9c[m
+Author: .dev.pguard.ghislain <ishimweghislain>
+Date:   Fri Apr 19 21:32:45 2024 -0700
+
+    nothing changed
+
+[33mcommit 1e7c6976743d168fc085230421918c871818696e[m
+Merge: 71f78a8 f2e433e
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Fri Apr 19 17:07:42 2024 +0000
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit 71f78a809eb4be9f5e42c2c8b62e190006329f4b[m
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Fri Apr 19 17:07:32 2024 +0000
+
+    i've added the read page of the admin(bus on route) it isn't well designed yet with nav and card organisation
+
+[33mcommit f2e433ebd57434e8b76dac0c8cd48653e95fc7cb[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Wed Apr 17 23:04:25 2024 +0200
+
+    Integrated a payment mack API
+
+[33mcommit ff68101c782c3f90888e500946f91a8af0762be1[m
+Author: ishimweghislain <ishimweghislain82@gmail.com>
+Date:   Mon Apr 15 19:46:00 2024 -0700
+
+    deignofadminauth
+
+[33mcommit f3b734d4d5e7f41d714b470c477544aba824a29b[m
+Author: ishimweghislain <ishimweghislain82@gmail.com>
+Date:   Mon Apr 15 19:37:17 2024 -0700
+
+    adminauthpage
+
+[33mcommit 7998fe46559349c9087ce7ae5a096428c86651de[m
+Merge: 5a1ac6c 3b1e46d
+Author: ishimweghislain <ishimweghislain82@gmail.com>
+Date:   Mon Apr 15 19:26:06 2024 -0700
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit 5a1ac6c18c6503cef1a4aed00995482914c2e2db[m
+Author: ishimweghislain <ishimweghislain82@gmail.com>
+Date:   Mon Apr 15 19:25:05 2024 -0700
+
+    admin auth
+
+[33mcommit daa5a6152b84f63108711cee3e81510dbeacf885[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 20:24:19 2024 +0200
+
+    Corrected some errors in the ticket From page due to styling
+
+[33mcommit 9a5a61d9d54b9ba3ec5c46ca82ee2cfda579df56[m
+Merge: 8082a45 018c739
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 20:12:55 2024 +0200
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit 018c73921f8be7e1d565ea775b1398054048be6b[m
+Merge: a9700b9 4b775ac
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Mon Apr 15 20:09:05 2024 +0000
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit a9700b982de9064c1b2b56e46674c401b7919803[m
+Merge: b6b6655 f3b734d
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Mon Apr 15 20:08:28 2024 +0000
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit b6b6655195fcba9440149f17391544960fd7771c[m
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Mon Apr 15 19:47:02 2024 +0000
+
+    resized the logo
+
+[33mcommit 8082a45f3a55114fe7c0c573b0964adf554e036a[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 20:12:44 2024 +0200
+
+    Changed colors abit
+
+[33mcommit 4b775aca81fc9e6e198686b7db3e8a02e260c262[m
+Merge: b04b912 ff68101
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 20:05:28 2024 +0200
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit b04b9120b279ee2c39dc8ca4ab5d51d73324cc5d[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 20:05:05 2024 +0200
+
+    Changed the bus form in styling
+
+[33mcommit 3b1e46d193ceb96eef30126a0a17192a2bea5f1b[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 19:17:14 2024 +0200
+
+    Made the book bus button to send data through the url
+
+[33mcommit 91c375ec0ef5f36fb74575e4d911cb50c6d34cff[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 18:56:47 2024 +0200
+
+    Styled bus resuls
+
+[33mcommit 1374629cdc0e6e6e47f057ce5ddf2c9221b51ea8[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 16:48:16 2024 +0200
+
+    Added axios functionalities
+
+[33mcommit a9f5c4a28865ad3800f05fbf79333ba9b10fb21d[m
+Merge: 959509f 306cd14
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 15:25:59 2024 +0200
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit 306cd142015b4f615b1eea394ba2e91728f93295[m
+Merge: a876f21 35d9972
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Mon Apr 15 14:35:00 2024 +0000
+
+    Merge branch 'design_team' of https://github.com/corbanrwi/katisha-system into design_team
+
+[33mcommit a876f21d315e4a1d7fd73b2fdb54615ccd547190[m
+Author: firstthing2do <atgpro100@gmail.com>
+Date:   Mon Apr 15 14:34:24 2024 +0000
+
+    hidden overflow
+
+[33mcommit 959509f1944f1ac97bbd4b42679c718aa2a18231[m
+Author: bentheone <rben5838@gmail.com>
+Date:   Mon Apr 15 15:25:43 2024 +0200
+
+    Changed and made the home using bulma
+
+[33mcommit 35d9972a763b99b9d90370758cd326aba33c03e3[m
+Merge: 5ed335f 7d80f64
+Author: bentheone <rben5838@gmail.com>
+Date:   Sat Apr 13 22:49:31 2024 +0200
+
+    Mer
