@@ -98,82 +98,172 @@
     <div id="detailsModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 style="margin: 20px 90px;">Bus Details</h2>
+            <h2 style="margin: 20px 90px; color: orange;">Bus Details</h2>
             <div id="modalContent"></div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const busRoutesContainer = document.getElementById('busRoutesContainer');
-            const busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
-            const detailsModal = document.getElementById('detailsModal');
-            const modalContent = document.getElementById('modalContent');
-            const closeBtn = detailsModal.querySelector('.close');
+   document.addEventListener('DOMContentLoaded', function() {
+    const busRoutesContainer = document.getElementById('busRoutesContainer');
+    const busRoutes = JSON.parse(localStorage.getItem('busRoutes')) || [];
+    const detailsModal = document.getElementById('detailsModal');
+    const modalContent = document.getElementById('modalContent');
+    const closeBtn = detailsModal.querySelector('.close');
+    const updateForm = document.getElementById('updateBusForm');
+    const numberOfSeatsField = document.getElementById('numberOfSeats');
 
-            if (busRoutes.length === 0) {
-                busRoutesContainer.innerHTML = '<p style="color:red; width:200px; height:20px;text-align:center;margin-top:150px; margin-left:420px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">No bus routes added yet!</p>';
-            } else {
-                busRoutes.forEach(function(route, index) {
-                    const busRouteBox = document.createElement('div');
-                    busRouteBox.classList.add('bus-route-box');
-                    busRouteBox.innerHTML = `
-                        <h2>View Bus on Route</h2>
-                        <div class="contenti">
-                            <p><B>RITCO</B> ${route.destination}</p>
-                            
-                            <div class="logo">
-                                <img src="images/mtn.png" alt="Agency Logo">
-                               <p><b>Bus ID:</b></p?<span>${route.busId}</span>
-                            </div>
-                        </div>
+    if (busRoutes.length === 0) {
+        busRoutesContainer.innerHTML = '<p style="color:red; width:200px; height:20px;text-align:center;margin-top:150px; margin-left:420px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">No bus routes added yet!</p>';
+    } else {
+        busRoutes.forEach(function(route, index) {
+            const busRouteBox = document.createElement('div');
+            busRouteBox.classList.add('bus-route-box');
+            busRouteBox.innerHTML = `
+                <h2>View Bus on Route</h2>
+                <div class="contenti">
+                    <p><B>RITCO</B> ${route.destination}</p>
                     
-                        <div class="times">
-                            <span class="uptime">Uptime: ${route.uptime}</span>
-                            <span class="reachtime">Reach Time: ${route.reachtime}</span>
-                        </div>
-                        <div class="buttonsi">
-                            <button class="view-details-btn">View Details</button>
-                            <button>Update Bus</button>
-                            <button class="delete-btn">Delete Bus</button>
-                        </div>
-                    `;
-                    busRoutesContainer.appendChild(busRouteBox);
+                    <div class="logo">
+                        <img src="images/mtn.png" alt="Agency Logo">
+                        <p><b>Bus ID:</b></p><span>${route.busId}</span>
+                    </div>
+                </div>
+                
+                <div class="times">
+                    <span class="uptime">Uptime: ${route.uptime}</span>
+                    <span class="reachtime">Reach Time: ${route.reachtime}</span>
+                </div>
+                <div class="buttonsi">
+                    <button class="view-details-btn">View Details</button>
+                    <button class="update-btn">Update Bus</button>
+                    <button class="delete-btn">Delete Bus</button>
+                </div>
+            `;
+            busRoutesContainer.appendChild(busRouteBox);
 
-                    const viewDetailsBtn = busRouteBox.querySelector('.view-details-btn');
-                    viewDetailsBtn.addEventListener('click', function() {
-                        modalContent.innerHTML = `
-                            <p><strong>Driver's Name:</strong> ${route.driverName}</p>
-                            <p><strong>Bus ID:</strong> ${route.busId}</p>
-                            <p><strong>Destination:</strong> ${route.destination}</p>
-                            <p><strong>Uptime:</strong> ${route.uptime}</p>
-                            <p><strong>Reach Time:</strong> ${route.reachtime}</p>
-                            <p><strong>Number of Seats:</strong> ${route.numberOfSeats}</p>
-                        `;
-                        detailsModal.style.display = 'block';
-                    });
+            const viewDetailsBtn = busRouteBox.querySelector('.view-details-btn');
+            const updateBtn = busRouteBox.querySelector('.update-btn');
+            const deleteBtn = busRouteBox.querySelector('.delete-btn');
 
-                    const deleteBtn = busRouteBox.querySelector('.delete-btn');
-                    deleteBtn.addEventListener('click', function() {
-                        if (confirm('Are you sure you want to delete this bus route?')) {
-                            busRoutes.splice(index, 1);
-                            localStorage.setItem('busRoutes', JSON.stringify(busRoutes));
-                            busRouteBox.remove();
-                        }
-                    });
-                });
-            }
-
-            closeBtn.addEventListener('click', function() {
-                detailsModal.style.display = 'none';
+            viewDetailsBtn.addEventListener('click', function() {
+                modalContent.innerHTML = `
+                    <p><strong>Driver's Name:</strong> ${route.driverName}</p>
+                    <p><strong>Bus ID:</strong> ${route.busId}</p>
+                    <p><strong>Destination:</strong> ${route.destination}</p>
+                    <p><strong>Uptime:</strong> ${route.uptime}</p>
+                    <p><strong>Reach Time:</strong> ${route.reachtime}</p>
+                    <p><strong>Number of Seats:</strong> ${route.numberOfSeats}</p>
+                `;
+                detailsModal.style.display = 'block';
             });
 
-            window.addEventListener('click', function(event) {
-                if (event.target === detailsModal) {
-                    detailsModal.style.display = 'none';
+            updateBtn.addEventListener('click', function() {
+                // Open the update form
+                document.getElementById('createBusForm').style.display = 'block';
+
+                // Populate the form fields with the current route details
+                document.getElementById('driverName').value = route.driverName;
+                document.getElementById('busId').value = route.busId;
+                document.getElementById('destination').value = route.destination;
+                document.getElementById('uptime').value = route.uptime;
+                document.getElementById('reachtime').value = route.reachtime;
+                numberOfSeatsField.value = route.numberOfSeats; // Setting the value directly
+
+                // Update bus details when the update button in the form is clicked
+                updateForm.onsubmit = function(event) {
+                    event.preventDefault(); // Prevent form submission
+                    
+                    // Get updated values from the form fields
+                    const updatedRoute = {
+                        driverName: document.getElementById('driverName').value,
+                        busId: document.getElementById('busId').value,
+                        destination: document.getElementById('destination').value,
+                        uptime: document.getElementById('uptime').value,
+                        reachtime: document.getElementById('reachtime').value,
+                        numberOfSeats: numberOfSeatsField.value // Retrieve the value from the field
+                    };
+
+                    // Update bus details in the busRoutes array
+                    busRoutes[index] = updatedRoute;
+                    // Update bus details in local storage
+                    localStorage.setItem('busRoutes', JSON.stringify(busRoutes));
+
+                    // Update bus details in the view details modal
+                    modalContent.innerHTML = `
+                        <p><strong>Driver's Name:</strong> ${updatedRoute.driverName}</p>
+                        <p><strong>Bus ID:</strong> ${updatedRoute.busId}</p>
+                        <p><strong>Destination:</strong> ${updatedRoute.destination}</p>
+                        <p><strong>Uptime:</strong> ${updatedRoute.uptime}</p>
+                        <p><strong>Reach Time:</strong> ${updatedRoute.reachtime}</p>
+                        <p><strong>Number of Seats:</strong> ${updatedRoute.numberOfSeats}</p>
+                    `;
+
+                    // Hide the update form after updating
+                    document.getElementById('createBusForm').style.display = 'none';
+                };
+            });
+
+            deleteBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to delete this bus route?')) {
+                    busRoutes.splice(index, 1);
+                    localStorage.setItem('busRoutes', JSON.stringify(busRoutes));
+                    busRouteBox.remove();
                 }
             });
         });
-    </script>
+    }
+
+    closeBtn.addEventListener('click', function() {
+        detailsModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === detailsModal) {
+            detailsModal.style.display = 'none';
+        }
+    });
+});
+
+
+</script>
+
+
+    <!-- Create Bus Form -->
+    <div id="createBusForm" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('createBusForm').style.display = 'none';">&times;</span>
+            <h2 style="margin: 20px 50px; color: orange;">Update Bus Details</h2>
+            <form id="updateBusForm">
+                <div class="form-group">
+                    <label for="driverName">Name of Driver:</label>
+                    <input type="text" id="driverName" name="driverName">
+                </div>
+                <div class="form-group">
+                    <label for="numberOfSeats">Number of Seats:</label>
+                    <select id="numberOfSeats" name="numberOfSeats" style="width: 140px; height: 35px;">
+                        <!-- JavaScript will populate options -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="busId">Bus ID:</label>
+                    <input type="text" id="busId" name="busId" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" name="destination">
+                </div>
+                <div class="form-group">
+                    <label for="uptime">Uptime:</label>
+                    <input type="time" id="uptime" name="uptime">
+                </div>
+                <div class="form-group">
+                    <label for="reachtime">Reach Time:</label>
+                    <input type="time" id="reachtime" name="reachtime">
+                </div>
+                <button type="button" id="updateButton">Update</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
